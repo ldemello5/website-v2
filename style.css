@@ -944,144 +944,46 @@ RACE DATA ROWS (Card, Line, Ring)
 }
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-MOBILE ADAPTATION (Triggers on screens 768px and smaller)
+MOBILE NOT SUPPORTED SCREEN
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
+/* 1. Hide the warning by default on computers */
+.mobile-warning {
+    display: none;
+}
+
+/* 2. MOBILE RULE: Triggers when the screen is shrinking to tablet/phone sizes */
 @media (max-width: 768px) {
     
-    /* 1. Reset Global Layout */
+    /* Hide the entire actual website */
     .page-wrapper {
-        flex-direction: column;
-    }
-    .page-content {
-        padding-bottom: 100px; /* Leaves room for the bottom app bar */
-        min-width: 100%;
-    }
-
-    /* 2. Transform Sidebar into a Bottom App Bar */
-    .navbar {
-        width: 100%;
-        height: 80px;
-        position: fixed;
-        bottom: 0;
-        top: auto;
-        padding: 0 10px;
-        flex-direction: row;
-        justify-content: center;
-        z-index: 9999;
-        border-top: 1px solid #ECECEC;
-        box-shadow: 0px -4px 12px rgba(0,0,0,0.05);
-    }
-    .navbar-logo {
-        display: none; /* Hides logo on mobile to save space */
-    }
-    .menu {
-        flex-direction: row;
-        width: 100%;
-        justify-content: space-around;
-        gap: 0;
-    }
-    .navbar-button {
-        padding: 10px;
-        font-size: 14px; /* Smaller text for phone screens */
-    }
-
-    /* 3. Fix Absolute Positioned Titles (Work & Videos) */
-    .work-title-col, .videos-title-col {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    /* 4. Fix Frame Spacing & Widths */
-    .home-master-frame, .work-master-frame, .videos-master-frame, .races-master-frame {
-        padding: 20px;
-    }
-    .first-row, .second-row, .third-row {
-        flex-direction: column;
-        gap: 40px;
-    }
-    .intro-pic-1, .intro-pic-carousel-container {
-        width: 100%;
-        height: 300px;
-    }
-
-    /* 5. Collapse Timelines & Connectors */
-    .v-line, .vid-v-line, .race-v-line, 
-    .h-line, .vid-h-line, .race-connector-line,
-    .timeline-center, .vid-timeline-center {
-        display: none; /* Hides the physical lines entirely on mobile */
-    }
-    .timeline-empty, .vid-timeline-empty {
-        display: none; /* Removes the empty spacing blocks */
-    }
-
-    /* 6. Stack All Cards Vertically */
-    .timeline-row, .vid-timeline-row, .race-data-row, .race-data-row:nth-child(even) {
-        flex-direction: column;
-        margin-top: 0 !important; /* Overrides the overlapping negative margins */
-        margin-bottom: 24px;
-        width: 100%;
-    }
-    .vid-left-box, .vid-right-box, .left-box, .right-box {
-        padding: 0;
-        justify-content: center;
+        display: none !important;
     }
     
-    /* 7. Allow Cards to Shrink */
-    .job-card, .vid-card, .race-card, .testimonial-card {
-        width: 100%; 
-        max-width: 100%;
-    }
-
-    /* 8. Fix Internal Card Layouts (Videos & Races) */
-    .vid-card {
-        flex-direction: column; /* Stacks text above video thumbnail */
-        text-align: center;
-    }
-    .vid-thumbnail-link, .vid-thumbnail {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-        margin-top: 12px;
-    }
-    .race-card {
-        flex-direction: column; /* Stacks race info above time stats */
-        text-align: center;
-        align-items: center;
-    }
-    .race-card-left, .race-card-right {
-        text-align: center;
-        align-items: center;
-        margin-bottom: 12px;
-    }
-
-    /* 9. Fix the Races Page Layout */
-    .race-category-container {
+    /* Turn on the warning screen and center everything */
+    .mobile-warning {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #ffffff; /* Matches your site background */
+        color: #000000;
+        text-align: center;
+        padding: 40px;
+        font-family: 'Space Grotesk', sans-serif;
     }
-    .race-left-col {
-        margin-right: 0;
-        margin-bottom: 24px;
+
+    .mobile-warning h1 {
+        font-size: 47px;
+        font-weight: 500;
+        margin-bottom: 16px;
     }
-    .race-vertical-text {
-        writing-mode: horizontal-tb; /* Flips the vertical category text to normal */
-        transform: none;
-        padding: 0;
-    }
-    
-    /* 10. Center the Testimonials */
-    .testimonial-carousel-container {
-        width: 100%;
-    }
-    .testimonial-content-wrapper {
-        margin-left: 0;
-        margin-right: 0;
+
+    .mobile-warning p {
+        font-size: 16px;
+        color: #718096; /* Matches your subtitle gray */
+        margin-bottom: 8px;
     }
 }
 
