@@ -110,4 +110,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ====================================================================
+    // 4. EASTER EGG
+    // ====================================================================
+
+    // Only run this logic if the page has the "graydon-body" class
+    if (document.querySelector('.graydon-body')) {
+        
+        // --- 1. Falling Heart Animation ---
+        function createHeart() {
+            const heart = document.createElement('img');
+            
+            heart.src = 'assets/icons/minecraftheart.png'; 
+            heart.classList.add('heart-icon');
+            
+            // Randomize horizontal starting position
+            heart.style.left = Math.random() * 100 + 'vw';
+            
+            // Randomize size between 20px and 50px
+            heart.style.width = (Math.random() * 30 + 20) + 'px';
+            
+            // Randomize fall speed between 2 and 5 seconds
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            
+            document.body.appendChild(heart);
+            
+            // Clean up the heart after 5 seconds
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 150);
+
+        // --- 2. Chiikawa Click & Hold Swap ---
+        const chiikawaImg = document.querySelector('.chiikawa-img');
+        
+        // Store the original image path so we can revert back to it
+        const originalImage = chiikawaImg.src; 
+        
+        // UPDATE THIS PATH TO YOUR SECOND CHIIKAWA PHOTO
+        const alternateImage = 'assets/pictures/chiikawa.png'; 
+
+        // When the mouse is pressed down
+        chiikawaImg.addEventListener('mousedown', () => {
+            chiikawaImg.src = alternateImage;
+        });
+
+        // When the mouse is released
+        chiikawaImg.addEventListener('mouseup', () => {
+            chiikawaImg.src = originalImage;
+        });
+
+        // Failsafe: if they click, drag their mouse off the image, and then let go
+        chiikawaImg.addEventListener('mouseleave', () => {
+            chiikawaImg.src = originalImage;
+        });
+
+        // For mobile touchscreen support
+        chiikawaImg.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Prevents the phone from trying to highlight or save the image
+            chiikawaImg.src = alternateImage;
+        });
+        
+        chiikawaImg.addEventListener('touchend', () => {
+            chiikawaImg.src = originalImage;
+        });
+    }
 });

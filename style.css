@@ -1049,3 +1049,76 @@ GLOBAL FOOTER
 .filter-black {
     filter: brightness(0) saturate(100%);
 }
+
+/* =========================================
+   SECRET EASTER EGG STYLES 
+   ========================================= */
+
+/* The hidden button in the navbar */
+.secret-button {
+    color: transparent; 
+    background-color: transparent;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    margin-top: auto; /* This pushes it to the bottom of the navbar */
+    display: block; 
+}
+
+.secret-button:hover {
+    color: #ffffff; 
+    background-color: #FFB5C0; 
+}
+
+/* The layout for graydon.html */
+.graydon-body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #ffebf0; /* Soft pink */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow: hidden; /* Stops scrollbars from appearing when hearts fall */
+}
+
+.graydon-title {
+    font-size: 4rem;
+    color: #ff4d88;
+    text-align: center;
+    z-index: 10;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.chiikawa-img {
+    max-width: 500px;
+    width: 80%;
+    
+    /* ADD THESE TWO LINES */
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;   
+    
+    border-radius: 20px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Falling Heart Animation */
+.heart-icon {
+    position: absolute;
+    top: -10vh; 
+    z-index: 5; 
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh); 
+    }
+}
