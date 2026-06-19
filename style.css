@@ -1084,3 +1084,66 @@ MOBILE ADAPTATION (Triggers on screens 768px and smaller)
         margin-right: 0;
     }
 }
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+GLOBAL FOOTER
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.site-footer {
+    width: 100%;
+    padding: 20px 40px 40px 40px;
+    border-top: 1px solid #ECECEC; /* Subtle dividing line */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    flex-wrap: wrap; /* Ensures links stack neatly on very small mobile screens */
+    justify-content: center;
+}
+
+.footer-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #718096;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    
+    /* Forces the icon and text to sit side-by-side horizontally */
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 8px; /* Space between the icon and the text */
+}
+
+.footer-link:hover {
+    color: #000000; 
+    transform: translateY(-2px); 
+}
+
+.footer-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    opacity: 0.7; 
+    transition: opacity 0.2s ease;
+    
+    /* Visually centers the icon with the text baseline */
+    transform: translateY(1px); 
+}
+
+.footer-link:hover .footer-icon {
+    opacity: 1; 
+}
+
+/* Forces any colored image to become solid black */
+.filter-black {
+    filter: brightness(0) saturate(100%);
+}
