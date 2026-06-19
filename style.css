@@ -505,7 +505,7 @@ WORK PAGE
 }
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-VIDEOS PAGE (Custom Timeline - No Visible Lines + Thumbnails)
+VIDEOS PAGE
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .videos-master-frame {
@@ -550,7 +550,7 @@ VIDEOS PAGE (Custom Timeline - No Visible Lines + Thumbnails)
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 960px; /* Increased to fit the wider cards */
+    max-width: 960px;
     padding-top: 80px; 
 }
 
@@ -585,21 +585,21 @@ VIDEOS PAGE (Custom Timeline - No Visible Lines + Thumbnails)
 }
 
 .vid-card {
-    width: 440px; /* Increased to comfortably fit text + thumbnail */
+    width: 440px; /*adjust card width here*/
     height: max-content;
     align-self: center;
     flex: none;
     
-    display: flex; /* Makes the card layout horizontal */
+    display: flex;
     flex-direction: row; 
-    align-items: center; /* Vertically centers the text and image */
+    align-items: center;
     justify-content: space-between;
-    gap: 16px; /* Space between text and image */
+    gap: 16px;
     
     border: 2px solid #AEAEAE;
     border-radius: 12px;
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08); 
-    padding: 12px; /* Slightly increased padding for breathing room */
+    padding: 12px;
     background-color: #ffffff;
     
     margin: 20px 0; 
@@ -615,16 +615,15 @@ VIDEOS PAGE (Custom Timeline - No Visible Lines + Thumbnails)
     display: flex;
     flex-direction: column;
     gap: 0;
-    flex: 1; /* Pushes the thumbnail strictly to the right side */
+    flex: 1;
 }
 
-/* NEW: Space for the YouTube Thumbnail */
 .vid-thumbnail {
-    width: 140px; /* Fixed width */
-    height: 79px; /* Standard 16:9 YouTube thumbnail ratio */
+    width: 140px; /*Fixed width*/
+    height: 79px; /*Standard 16:9 YouTube thumbnail ratio*/
     object-fit: cover;
-    flex-shrink: 0; /* Prevents the image from being squished by long text */
-    background-color: #E2E8F0; /* A placeholder gray box in case you haven't added an image yet */
+    flex-shrink: 0;
+    background-color: #E2E8F0;
 }
 
 .vid-title {
@@ -675,20 +674,18 @@ VIDEOS PAGE (Custom Timeline - No Visible Lines + Thumbnails)
     pointer-events: auto;
 }
 
-/* Link styling for video titles */
 .vid-title a {
-    text-decoration: none; /* Removes the underline */
-    color: inherit; /* Inherits the black color from the parent element */
+    text-decoration: none; /*Removes the underline*/
+    color: inherit; /*Inherits the color from the parent element*/
     transition: color 0.2s ease;
 }
 
 .vid-title a:hover {
-    color: #4A5568; /* Adds a slight gray hover effect so users know it's clickable */
+    color: #4A5568;
 }
 
-/* Wrapper for the thumbnail link */
 .vid-thumbnail-link {
-    flex-shrink: 0; /* Prevents the image from being squished by long text */
+    flex-shrink: 0;
     display: block; 
     overflow: hidden;
 }
@@ -698,7 +695,7 @@ VIDEOS PAGE (Custom Timeline - No Visible Lines + Thumbnails)
 }
 
 .vid-thumbnail-link:hover .vid-thumbnail {
-    opacity: 0.85; /* Slight dimming effect when hovering over the image */
+    opacity: 0.85;
 }
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -712,10 +709,9 @@ RACES PAGE
     margin: 0 auto;
 }
 
-/* Header Section */
 .races-header {
     margin-bottom: 80px;
-    text-align: center; /* Centered the header text */
+    text-align: center;
 }
 
 .races-header h1 {
@@ -742,14 +738,12 @@ RACES PAGE
     margin-top: 16px;
 }
 
-/* Category Frame (Runs, Triathlons, etc.) */
 .race-category-container {
     display: flex;
     flex-direction: row;
     margin-bottom: 60px;
 }
 
-/* Left Column: Vertical Text & Line */
 .race-left-col {
     display: flex;
     flex-direction: row;
@@ -781,11 +775,10 @@ RACES PAGE
     min-height: 200px; 
 }
 
-/* Right Column: Icon & Cards */
 .race-right-col {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the icon and all the rows horizontally */
+    align-items: center;
     flex: 1; 
 }
 
@@ -800,18 +793,17 @@ RACES PAGE
     opacity: 0.8; 
 }
 
-/* Special sizing for wide text-based logos like HYROX */
 .triathlon-icon {
-    height: 48px; /* Matches the height of the other icons */
-    width: auto; /* Allows the text to stretch out left-to-right */
-    max-width: 300px; /* A safe limit so it doesn't get too massive */
+    height: 48px;
+    width: auto;
+    max-width: 300px;
     object-fit: contain;
     opacity: 0.8; 
 }
 .hyrox-icon {
-    height: 72px; /* Matches the height of the other icons */
-    width: auto; /* Allows the text to stretch out left-to-right */
-    max-width: 300px; /* A safe limit so it doesn't get too massive */
+    height: 72px;
+    width: auto;
+    max-width: 300px;
     object-fit: contain;
     opacity: 0.8; 
 }
@@ -819,14 +811,10 @@ RACES PAGE
 .race-card-row {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the rows within the column */
+    align-items: center;
     gap: 32px; 
     width: 100%;
 }
-
-/*/////////////////////////////////////////////
-RACE DATA ROWS (Card, Line, Ring)
-/////////////////////////////////////////////*/
 
 .race-data-row {
     display: flex;
@@ -835,12 +823,10 @@ RACE DATA ROWS (Card, Line, Ring)
     justify-content: center;
 }
 
-/* NEW: Reverses the layout for every 2nd, 4th, 6th row */
 .race-data-row:nth-child(even) {
     flex-direction: row-reverse;
 }
 
-/* 1. The Card */
 .race-card {
     flex: 0 0 auto;
     width: 550px; 
@@ -863,7 +849,6 @@ RACE DATA ROWS (Card, Line, Ring)
     box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.12); 
 }
 
-/* Inner Card: Left Column */
 .race-card-left {
     text-align: left;
     display: flex;
@@ -886,7 +871,6 @@ RACE DATA ROWS (Card, Line, Ring)
     margin: 0;
 }
 
-/* Inner Card: Right Column */
 .race-card-right {
     text-align: right;
     display: flex;
@@ -909,7 +893,6 @@ RACE DATA ROWS (Card, Line, Ring)
     margin: 0;
 }
 
-/* 2. The Connecting Line */
 .race-connector-line {
     height: 2px;
     background-color: #AEAEAE;
@@ -917,7 +900,6 @@ RACE DATA ROWS (Card, Line, Ring)
     flex-shrink: 0;
 }
 
-/* 3. The Progress Ring */
 .race-progress-ring {
     width: 80px;
     height: 80px;
@@ -947,27 +929,24 @@ RACE DATA ROWS (Card, Line, Ring)
 MOBILE NOT SUPPORTED SCREEN
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-/* 1. Hide the warning by default on computers */
 .mobile-warning {
     display: none;
 }
 
-/* 2. MOBILE RULE: Triggers when the screen is shrinking to tablet/phone sizes */
 @media (max-width: 768px) {
-    
-    /* Hide the entire actual website */
+
     .page-wrapper {
         display: none !important;
     }
     
-    /* Turn on the warning screen and center everything */
+
     .mobile-warning {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background-color: #ffffff; /* Matches your site background */
+        background-color: #ffffff;
         color: #000000;
         text-align: center;
         padding: 40px;
@@ -982,7 +961,7 @@ MOBILE NOT SUPPORTED SCREEN
 
     .mobile-warning p {
         font-size: 16px;
-        color: #718096; /* Matches your subtitle gray */
+        color: #718096;
         margin-bottom: 8px;
     }
 }
@@ -994,7 +973,7 @@ GLOBAL FOOTER
 .site-footer {
     width: 100%;
     padding: 20px 40px 40px 40px;
-    border-top: 1px solid #ECECEC; /* Subtle dividing line */
+    border-top: 1px solid #ECECEC;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1006,7 +985,7 @@ GLOBAL FOOTER
     display: flex;
     flex-direction: row;
     gap: 40px;
-    flex-wrap: wrap; /* Ensures links stack neatly on very small mobile screens */
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -1018,11 +997,10 @@ GLOBAL FOOTER
     text-decoration: none;
     transition: color 0.2s ease, transform 0.2s ease;
     
-    /* Forces the icon and text to sit side-by-side horizontally */
     display: flex;
     flex-direction: row; 
     align-items: center;
-    gap: 8px; /* Space between the icon and the text */
+    gap: 8px;
 }
 
 .footer-link:hover {
@@ -1037,7 +1015,6 @@ GLOBAL FOOTER
     opacity: 0.7; 
     transition: opacity 0.2s ease;
     
-    /* Visually centers the icon with the text baseline */
     transform: translateY(1px); 
 }
 
@@ -1045,16 +1022,14 @@ GLOBAL FOOTER
     opacity: 1; 
 }
 
-/* Forces any colored image to become solid black */
 .filter-black {
     filter: brightness(0) saturate(100%);
 }
 
-/* =========================================
-   SECRET EASTER EGG STYLES 
-   ========================================= */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+EASTER EGG
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-/* The hidden button in the navbar */
 .secret-button {
     color: transparent; 
     background-color: transparent;
@@ -1064,7 +1039,7 @@ GLOBAL FOOTER
     text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 5px;
-    margin-top: auto; /* This pushes it to the bottom of the navbar */
+    margin-top: auto;
     display: block; 
 }
 
@@ -1073,18 +1048,17 @@ GLOBAL FOOTER
     background-color: #FFB5C0; 
 }
 
-/* The layout for graydon.html */
 .graydon-body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-color: #ffebf0; /* Soft pink */
+    background-color: #ffebf0; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'Space Grotesk', sans-serif;
-    overflow: hidden; /* Stops scrollbars from appearing when hearts fall */
+    overflow: hidden;
 }
 
 .graydon-title {
@@ -1100,7 +1074,6 @@ GLOBAL FOOTER
     max-width: 500px;
     width: 80%;
     
-    /* ADD THESE TWO LINES */
     aspect-ratio: 1 / 1; 
     object-fit: cover;   
     
@@ -1109,7 +1082,6 @@ GLOBAL FOOTER
     cursor: pointer;
 }
 
-/* Falling Heart Animation */
 .heart-icon {
     position: absolute;
     top: -10vh; 
