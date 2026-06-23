@@ -1050,15 +1050,16 @@ EASTER EGG
 
 .graydon-body {
     margin: 0;
-    padding: 0;
-    height: 100vh;
+    padding: 40px 0; /* Adds breathing room at the top and bottom */
+    min-height: 100vh; /* Allows the page to grow taller than the screen */
     background-color: #ffebf0; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'Space Grotesk', sans-serif;
-    overflow: hidden;
+    overflow-x: hidden; /* Prevents horizontal scrolling from the hearts */
+    overflow-y: auto; /* ALLOWS vertical scrolling! */
 }
 
 .graydon-title {
@@ -1082,11 +1083,13 @@ EASTER EGG
     cursor: pointer;
 }
 
+/* Falling Heart Animation */
 .heart-icon {
-    position: absolute;
+    position: fixed; /* Changed to fixed so they fall across the screen */
     top: -10vh; 
     z-index: 5; 
     animation: fall linear forwards;
+    pointer-events: none; /* Ensures hearts don't block his button clicks */
 }
 
 @keyframes fall {
