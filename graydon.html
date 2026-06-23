@@ -17,6 +17,57 @@
     
     <img src="assets/pictures/chiikawa2bg.png" alt="Chiikawa" class="chiikawa-img">
 
+    <!-- Hidden form for Netlify to catch all three answers -->
+    <form name="date-decision" data-netlify="true" hidden>
+        <input type="text" name="dinner" />
+        <input type="text" name="bubble_tea" />
+        <input type="text" name="gifts" />
+    </form>
+
+    <!-- Multi-Step Date Planner Section -->
+    <div class="date-planner" id="planner-container">
+        
+        <!-- Step 1: Dinner -->
+        <div id="q1-dinner" class="planner-step">
+            <h2>Where should I take you for dinner? 🥺</h2>
+            <div class="date-options">
+                <button class="date-btn dinner-btn" data-choice="Italian">Italian</button>
+                <button class="date-btn dinner-btn" data-choice="Japanese">Japanese</button>
+                <button class="date-btn dinner-btn" data-choice="Chinese">Chinese</button>
+                <button class="date-btn dinner-btn" data-choice="Vietnamese">Vietnamese</button>
+                <button class="date-btn dinner-btn" data-choice="Middle Eastern">Middle Eastern</button>
+                <button class="date-btn dinner-btn" data-choice="American">American</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Bubble Tea (Hidden initially) -->
+        <div id="q2-boba" class="planner-step" style="display: none;">
+            <h2>Do you want bubble tea? 🧋</h2>
+            <div class="date-options">
+                <button class="date-btn boba-btn" data-choice="No bubble tea">No bubble tea</button>
+                <button class="date-btn boba-btn" data-choice="Bubble tea before">Bubble tea before</button>
+                <button class="date-btn boba-btn" data-choice="Bubble tea after">Bubble tea after</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Gifts (Hidden initially) -->
+        <div id="q3-gifts" class="planner-step" style="display: none;">
+            <h2>Select your parting gift: 🎁</h2>
+            <div class="checkbox-group">
+                <label class="gift-label"><input type="checkbox" class="gift-checkbox" value="A kiss 😘"> A kiss 😘</label>
+                <label class="gift-label"><input type="checkbox" class="gift-checkbox" value="A hug 🤗"> A hug 🤗</label>
+                <label class="gift-label"><input type="checkbox" class="gift-checkbox" value="An I love you ❤️"> An I love you ❤️</label>
+            </div>
+            <button id="final-submit" class="date-btn submit-btn" disabled>Submit Date Plan! 💌</button>
+        </div>
+
+        <!-- Final Message (Hidden initially) -->
+        <div id="final-message" class="planner-step" style="display: none;">
+            <h2 id="confirmation-text">Yay! I can't wait! 🥰</h2>
+        </div>
+
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>

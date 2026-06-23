@@ -1094,3 +1094,100 @@ EASTER EGG
         transform: translateY(110vh); 
     }
 }
+
+.date-planner {
+    margin-top: 0px;
+    text-align: center;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.6); /* Creates a soft, semi-transparent white box */
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255, 77, 136, 0.15);
+}
+
+.date-planner h2 {
+    color: #ff4d88;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.date-options {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 600px;
+}
+
+.date-btn {
+    background-color: #ff4d88;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s;
+    box-shadow: 0 4px 10px rgba(255, 77, 136, 0.3);
+}
+
+.date-btn:hover {
+    background-color: #ff1a66;
+    transform: translateY(-5px) scale(1.05); /* Bounces up slightly */
+}
+
+.date-btn:active {
+    transform: translateY(2px) scale(0.95); /* Squishes when clicked */
+}
+
+.planner-step {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 20px auto 10px auto;
+    max-width: fit-content;
+    text-align: left;
+}
+
+.gift-label {
+    font-size: 1.2rem;
+    color: #ff4d88;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.gift-checkbox {
+    width: 22px;
+    height: 22px;
+    accent-color: #ff4d88; /* Makes the checkbox pink when checked */
+    cursor: pointer;
+}
+
+.submit-btn {
+    margin-top: 15px;
+    background-color: #ff4d88; 
+}
+
+/* Disabled state for the submit button */
+.submit-btn:disabled {
+    background-color: #cccccc;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none; /* Stops it from bouncing when disabled */
+    color: #888888;
+}

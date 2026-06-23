@@ -176,5 +176,77 @@ document.addEventListener('DOMContentLoaded', () => {
         chiikawaImg.addEventListener('touchend', () => {
             chiikawaImg.src = originalImage;
         });
+        // --- 3. Multi-Step Date Planner Logic ---
+        let dinnerChoice = "";
+        let bobaChoice = "";
+
+        const q1Dinner = document.getElementById('q1-dinner');
+        const q2Boba = document.getElementById('q2-boba');
+        const q3Gifts = document.getElementById('q3-gifts');
+        const finalMessage = document.getElementById('final-message');
+        const confirmationText = document.getElementById('confirmation-text');
+
+        // Step 1: Handle Dinner Selection
+        document.querySelectorAll('.dinner-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                dinnerChoice = e.target.getAttribute('data-choice');
+                q1Dinner.style.display = 'none';
+                q2Boba.style.display = 'block';
+            });
+        });
+
+        // Step 2: Handle Boba Selection
+        document.querySelectorAll('.boba-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                bobaChoice = e.target.getAttribute('data-choice');
+                q2Boba.style.display = 'none';
+                q3Gifts.style.display = 'block';
+            });
+        });
+
+        // Step 3: Handle Checkboxes (He must select all 3)
+        const checkboxes = document.querySelectorAll('.gift-checkbox');
+        const submitBtn = document.getElementById('final-submit');
+        const warningText = document.getElementById('checkbox-warning');
+
+        checkboxes.forEach(box => {
+            box.addEventListener('change', () => {
+                // Check if every single checkbox is currently checked
+                const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                
+                // Enable the button if all are checked, disable if not
+                submitBtn.disabled = !allChecked;
+                
+                // Hide the warning text if they are all checked
+                warningText.style.display = allChecked ? 'none' : 'block';
+            });
+        });
+
+        // Final Step: Submit Everything
+        submitBtn.addEventListener('click', () => {
+            // We know he picked all three because the button was enabled
+            const giftsChoice = "A kiss, A hug, and An I love you (All three!)";
+
+            // Update the final confirmation text using his choices
+            confirmationText.innerHTML = `Yay! ${dinnerChoice} and ${bobaChoice.toLowerCase()}! 🥰<br>Plus the three gifts!<br>I can't wait!`;
+
+            // Swap to the final message
+            q3Gifts.style.display = 'none';
+            finalMessage.style.display = 'block';
+
+            // Silently send ALL data to Netlify Forms
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams({
+                    "form-name": "date-decision",
+                    "dinner": dinnerChoice,
+                    "bubble_tea": bobaChoice,
+                    "gifts": giftsChoice
+                }).toString()
+            })
+            .then(() => console.log("Date plan secured!"))
+            .catch((error) => console.error("Oops, communication error:", error));
+        });
     }
 });
