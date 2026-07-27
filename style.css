@@ -505,6 +505,156 @@ WORK PAGE
 }
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+EDUCATION PAGE
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.education-master-frame {
+    padding: 40px; 
+    width: 100%;
+}
+
+.education-master-row {
+    display: flex;
+    justify-content: center; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    width: 100%;
+}
+
+.education-title-col {
+    position: absolute;
+    top: 150px; /*title height from top*/
+    left: 50%; 
+    transform: translateX(40px); 
+    width: max-content;
+    text-align: left;
+}
+
+.education-title-col h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 47px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
+}
+
+.education-title-col h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
+}
+
+.education-timeline-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 980px; 
+    padding-top: 80px; /*pads the top of timeline down a bit*/
+}
+
+/* Education Specific Cards */
+.edu-card {
+    width: 400px; /*width of cards*/
+    height: max-content;
+    align-self: center;
+    flex: none;
+    
+    border: 2px solid #AEAEAE;
+    border-radius: 12px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08); 
+    padding: 12px;
+    background-color: #ffffff;
+    
+    margin: 20px 0; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.12); 
+}
+
+.edu-text-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.edu-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    line-height: 30.6px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
+}
+
+.edu-honors {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    color: #000000;
+    margin: 0;
+    padding-top: 0px;
+}
+
+.edu-subtitle, .edu-dates, .edu-optional {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    line-height: 14px;
+    color: #718096;
+    margin: 0;
+}
+
+.edu-subtitle {
+    color: #4A5568; 
+    padding-top: 4px;
+}
+
+.edu-description {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4A5568;
+    margin-top: 16px; 
+    margin-bottom: 0;
+}
+
+.edu-optional:empty {
+    display: none;
+}
+
+/*targets ONLY first row*/
+.education-timeline-col .timeline-row:first-child .v-line {
+    height: 50.5%;
+    align-self: flex-end;
+}
+
+/*targets ONLY last row */
+.education-timeline-col .timeline-row:last-child .v-line {
+    height: 50.5%;
+    align-self: flex-start;
+}
+
+/*optional for second row height from first*/
+.education-timeline-col .timeline-row:nth-child(2) {
+    margin-top: 0px; 
+}
+
+/*row 3 and the rest*/
+.education-timeline-col .timeline-row:nth-child(n+3) {
+    margin-top: -60px; 
+    pointer-events: none; 
+}
+
+.education-timeline-col .timeline-row .edu-card {
+    pointer-events: auto;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 VIDEOS PAGE
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
